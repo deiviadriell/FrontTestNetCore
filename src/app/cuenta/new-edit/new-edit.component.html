@@ -1,0 +1,57 @@
+<div class="modal-content">
+    <form class="mt-4" [formGroup]="form" (ngSubmit)="guardar()">
+        <div class="modal-header">
+            <h5 class="modal-title">
+                {{tituloModal}}
+            </h5>
+        </div>
+
+        <div class="modal-body">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label>Cliente*</label>
+                        <ng-select formControlName="idCliente" [items]="clientes" bindLabel="nombres" bindValue="clienteid">
+                        </ng-select>
+
+                    </div>
+                    <div class="form-group">
+                        <label>Tipo Cuenta*</label>
+                        <ng-select formControlName="idTipoCuenta" [items]="tipoCuenta" bindLabel="nombre" bindValue="id">
+                        </ng-select>
+                    </div>
+                    <div class="form-group">
+                        <label>Limite Retiro Diario*</label>
+                        <input type="number" class="form-control" formControlName="limiteRetiroDiario" placeholder="Límite retiro">
+                        <!-- <span *ngIf="campoEsValido('image')" class="form-text text-danger">
+                 El url de la imagen es obligatorio
+                 </span> -->
+                    </div>
+                </div>
+           
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label>Número Cuenta*</label>
+                    <input formControlName="numero" type="text" class="form-control"
+                        placeholder="Número de cuenta">
+                    <!-- <span *ngIf="campoEsValido('name')" class="form-text text-danger">
+                El nombre es obligatorio.
+                </span> -->
+                </div>
+
+                <div class="form-group">
+                    <label>Saldo Inicial*</label>
+                    <input formControlName="saldoInicial" type="text" class="form-control"
+                        placeholder="Saldo Inicial">
+                    <!-- <span *ngIf="campoEsValido('name')" class="form-text text-danger">
+                El nombre es obligatorio.
+                </span> -->
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-success" type="submit">Guardar</button>
+        </div>
+    </form>
+</div>
